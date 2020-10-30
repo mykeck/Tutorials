@@ -1,4 +1,5 @@
 asgiref==3.2.10
+binary==1.0.0
 certifi==2020.6.20
 chardet==3.0.4
 click==7.1.2
@@ -10,7 +11,9 @@ idna==2.10
 Jinja2==2.11.2
 MarkupSafe==1.1.1
 pkg-resources==0.0.0
+psycopg2==2.8.6
 Pygments==2.7.2
+python-decouple==3.3
 pytz==2020.1
 requests==2.24.0
 six==1.15.0

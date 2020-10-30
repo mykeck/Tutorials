@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+from decouple import config,Csv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,6 +36,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary',
+    'rest_framework.authtoken',
     'rest_framework',
     'app',
     'django.contrib.admin',
@@ -120,3 +127,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+cloudinary.config( 
+  cloud_name = "dbhe0lknh", 
+  api_key = "843881231652611", 
+  api_secret = "J9PRsc2CJ-02Y3Exg9Mja8Kc8DA" 
+)

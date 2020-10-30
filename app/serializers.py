@@ -6,7 +6,8 @@ from .models import Articles
 class ArticlesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Articles
-        fields = ("title", "author", "email","date","pk")
+        # fields = ('id', 'title', 'author')
+        fields = '__all__'
 
     def create(self, validate_data):
         return Articles.objects.create(validated_data)
@@ -14,6 +15,7 @@ class ArticlesSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         instance.title = validated_data.get('title',instance.title)
+        instance.tutorial_image = validated_data.get('tutorial_image', instance.author)
         instance.author = validated_data.get('author',instance.author) 
         instance.email = validated_data.get('email',instance.author) 
         instance.date = validated_data.get('date',instance.author)   
